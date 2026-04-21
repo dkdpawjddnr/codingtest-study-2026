@@ -1,0 +1,48 @@
+### Java ###
+# 컴파일된 클래스 파일
+*.class
+
+# 로그 파일
+*.log
+
+# 빌드 결과물 (원래 올려주신 내용)
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+build/
+
+### IntelliJ IDEA ###
+# 인텔리제이 설정 파일 및 폴더
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### 기타 ###
+# Windows 이미지 캐시 파일
+Thumbs.db
