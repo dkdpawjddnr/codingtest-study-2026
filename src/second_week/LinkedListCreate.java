@@ -57,6 +57,17 @@ class LinkedListCr {
         prevNode.next = newNode;
         newNode.next = nextNode;
     }
+
+    public void deleteNode(int index){
+        if(index == 0){
+            head = head.next;
+            return;
+        }
+
+        Node oldNode = getNode(index-1);
+        Node delNode = getNode(index);
+        oldNode.next = delNode.next;
+    }
 }
 
 public class LinkedListCreate{
@@ -69,5 +80,16 @@ public class LinkedListCreate{
         System.out.println("getNode : " + getNode.data);
         linkedList.addNode(1, 6);
         linkedList.addNode(0, 7);
+        linkedList.deleteNode(1);
+        System.out.println("노드 삭제 후 printAll");
+        linkedList.printAll();
+
+        // head
+        //      head
+        // [7]->[6]->[12]->[8]
+        linkedList.deleteNode(0);
+        // [6]->[12]->[8]
+        System.out.println("노드 삭제 후 printAll");
+        linkedList.printAll();
     }
 }
