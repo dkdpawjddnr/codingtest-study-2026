@@ -43,6 +43,20 @@ class LinkedListCr {
         }
         return curNode;
     }
+
+    public void addNode(int index, int value){
+        Node newNode = new Node(value);
+        if(index == 0){
+            newNode.next = head;
+            this.head = newNode;
+            return;
+        }
+
+        Node prevNode = getNode(index - 1);
+        Node nextNode = prevNode.next;
+        prevNode.next = newNode;
+        newNode.next = nextNode;
+    }
 }
 
 public class LinkedListCreate{
@@ -53,5 +67,7 @@ public class LinkedListCreate{
         linkedList.printAll();
         LinkedListCr.Node getNode = linkedList.getNode(1);
         System.out.println("getNode : " + getNode.data);
+        linkedList.addNode(1, 6);
+        linkedList.addNode(0, 7);
     }
 }
