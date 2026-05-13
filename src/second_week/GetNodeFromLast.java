@@ -25,21 +25,19 @@ class LinkedListFromLast{
     }
 
     public Node getNodeFromLast(int k){
-        int length = 1;
-        Node cur = this.head;
-        while(cur != null){
-            length ++;
-            cur = cur.next;
+        Node slow = this.head;
+        Node fast = this.head;
+        for(int i = 0; i < k; i++){
+            fast = fast.next;
         }
-        cur = this.head;
-        int endLength = length - k;
-        System.out.println("endLength = " + endLength);
-        for(int i = 0; i < endLength; i++){
-            cur = cur.next;
+        while (fast.next != null){
+            slow = slow.next;
+            fast = fast.next;
         }
-        return cur;
+        return slow;
     }
 }
+
 public class GetNodeFromLast {
     public static void main(String[] args) {
         LinkedListFromLast linkedList = new LinkedListFromLast(6);
