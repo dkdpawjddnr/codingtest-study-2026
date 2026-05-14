@@ -1,8 +1,11 @@
 package second_week;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class IsAvailableToOrder {
+    /*
     public static boolean isAvailableToOrder(String[] menus, String[] orders){
         Arrays.sort(menus);
         for(String order : orders){
@@ -27,8 +30,21 @@ public class IsAvailableToOrder {
             }
             mid = (max + min) / 2;
         }
-
         return false;
+    }
+    */
+    public static boolean isAvailableToOrder(String[] menus, String[] orders){
+        Set<String> menuSet = new HashSet<>();
+        for (String menu : menus){
+            menuSet.add(menu);
+        }
+
+        for (String order : orders){
+            if (!menuSet.contains(order)){
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
